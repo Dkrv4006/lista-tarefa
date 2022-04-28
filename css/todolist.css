@@ -18,9 +18,7 @@ body{
     background-color: #3f3f3f;
 }
 
-body,html{
-    height:100%;
-}
+
 
 ul,li{
     list-style-type: none;
@@ -42,6 +40,7 @@ ion-icon{
     text-align: center;
     width: 50vw;
     padding: 10px;
+    margin-top: 30px;
     border-radius: 20px;
    
     
@@ -55,18 +54,20 @@ ion-icon{
     border-radius: 20px;
     
     
-    background-color: #3a3939;
+    background-color: #3f3f3f;
     
     
 }
 
 .todo-add-item__container >.heading{
     font-size:3rem;
+    color: white;
 }
 
 .todo-add-item{
     display:flex;
     flex-direction:row;
+    margin-top: 20px;
     justify-content: center;
     align-content: center;
     
@@ -82,7 +83,7 @@ ion-icon{
 
 
 .inputItem::placeholder {
-    color:#a8a8a8;
+    color:#777777;
     
 }
 
@@ -101,7 +102,7 @@ input[type="submit"]:hover {
 .todo-list__container{
     padding: 20px; 
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
     flex-wrap: wrap;
     
@@ -120,7 +121,7 @@ input[type="submit"]:hover {
 
 .todo-item {
     display:grid;
-    
+    width: 240px;
     border-radius:20px;
     box-shadow: 2px 2px 8px rgba(77, 77, 77, .5);
     background-color: white;
@@ -130,6 +131,9 @@ input[type="submit"]:hover {
 }
 
 
+.button-check:hover{
+    border: 2px solid #525252 ;
+}
 .button-check{
     grid-column: 1/2;
 
@@ -138,7 +142,7 @@ input[type="submit"]:hover {
     width:1.5rem;
     height:1.5rem;
     border-radius:.2rem;
-    border:2px solid #726a95;
+    border:2px solid #0004ff;
     position:relative;
     outline:transparent;
 }
@@ -151,7 +155,7 @@ p{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    color:#726a95;
+    color:#0004ff;
      
 }
 
@@ -170,8 +174,9 @@ p{
 .daniel{
     grid-row: 2/3;
     grid-column: 1/4;
-    width: 150px;
     margin-top: 10px;
+    width: 100%;
+    text-align: start;
 }
 
 .fa-edit{
@@ -184,14 +189,15 @@ p{
 .editContainer{
     position:absolute;
     z-index: 99999;
-    width:40%;
+    width:400px;
     height:6rem;
-    background-color:rgb(225, 208, 252);
+    background-color:rgb(255, 255, 255);
     border-radius:.4rem;
-    box-shadow: 3px 3px 15px rgba(77, 77, 77, .8);
+    box-shadow: 3px 3px 15px rgba(54, 54, 54, 0.8);
 
     display:flex;
     justify-content:space-evenly;
+    justify-self: center;
     align-items: center;
     display:none;
 }
@@ -199,8 +205,8 @@ p{
 .editContainer .editInput{
     background-color:transparent;
     border:none;
-    border:2px solid #4b3d8a;
-    border-radius:.2rem;
+    border:2px solid #0026ff;
+    border-radius:10px;
     padding:.5rem 1rem;
 }
 
@@ -216,21 +222,21 @@ p{
 
 }
 .editContainer .editButton{
-    background-color: #4b3d8a;
+    background-color: #2f00ff;
     color: seashell;
 }
 
 .editContainer .cancelButton{
-    background-color: #8a3d3d;
+    background-color: #ff0000;
     color: seashell;
 }
 
 .editContainer .editButton:hover {
-    background-color: #8478b9;
+    background-color: #5c38ff;
     color: seashell;
 }
 .editContainer .cancelButton:hover{
-    background-color: #6f3131;
+    background-color: #fa4b4b;
     color: seashell;
 }
 /*FIM ---- Container que abre ao clicar no icon do lapis para editar tarefa*/
@@ -261,16 +267,16 @@ p{
 }
 
 .fa-trash-alt {
-    color: rgb(134, 134, 134);
+    color: rgb(4, 0, 255);
 }
 
 .fa-edit {
-    color:#70608f;
+    color:#2600ff;
 }
 
 
 .fa-edit:hover {
-    color:#1a0577;
+    color:#2bff00;
 }
 
 .fa-trash-alt:hover {
@@ -285,17 +291,122 @@ p{
     border:none;
 }
 
-@media screen and ( max-width: 950px ){
+@media screen and ( max-width: 1350px ){
 
     .todo-list__app{
         width: 80vw;
     }
     
 }
-@media screen and (max-width: 450px) {
+@media screen and ( max-width: 850px ){
+
+    .todo-list__app{
+        width: 80vw;
+        
+    }
+    .todo-item {
+        width: 250px
+    }
+    .editContainer {
+        flex-direction: column;
+        border-radius: 10px;
+        width: 40%;
+        height: 15%;
+    
+    }
+    
+    .editContainer .editInput {
+        width: 80%;
+        margin: 0;
+    
+    }
+    
+    .editContainer .editButton {
+        width: 50%;
+        border-radius: 10px;
+    }
+    
+    .editContainer .cancelButton {
+        width: 50%;
+        border-radius: 10px;
+    }
+    
+}
+@media screen and (max-width: 600px) {
 
     .todo-list__app {
         width: 90vw;
     }
 
+    .todo-item{
+        width: 70vw;
+        text-align: center;
+    }
+    .daniel{
+        width: 100%;
+        
+    }
+    .editContainer{
+        flex-direction: column;
+        border-radius: 10px;
+        width: 50%;
+        height: 15%;
+
+    }
+    .editContainer .editInput{
+        width: 80%;
+        margin: 0;
+      
+    }
+    .editContainer .editButton{
+        width: 50%;
+        border-radius: 10px;
+    }
+    .editContainer .cancelButton{
+        width: 50%;
+        border-radius: 10px;
+    }
+
+}
+@media screen and (max-width: 400px) {
+    .inputItem {
+        width: 60%;
+    
+    }
+    .todo-list__container{
+        padding: 5px;
+    }
+    .todo-item {
+        width: 70vw;
+        text-align: center;
+        
+    }
+    p{
+        font-size: 13px;
+    }
+    
+    
+    .editContainer {
+        flex-direction: column;
+        border-radius: 10px;
+        width: 80%;
+        height: 15%;
+    
+    }
+    
+    .editContainer .editInput {
+        width: 80%;
+        margin: 0;
+    
+    }
+    
+    .editContainer .editButton {
+        width: 50%;
+        border-radius: 10px;
+    }
+    
+    .editContainer .cancelButton {
+        width: 50%;
+        border-radius: 10px;
+    }
 }
