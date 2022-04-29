@@ -11,20 +11,6 @@
     const lis = ul.getElementsByTagName("li")
 
 
-    //     {
-        //         name:"task",
-        //         createAt: Date.now(),
-        //         completed: false
-        
-        //     }
-        // ]
-        
-        // function addEventLi(li){
-    //     li.addEventListener("click", function(){
-        //     console.log(this)
-        // })
-        
-        // }
     let arrTasks = getSavedData()
 
     function getSavedData(){
@@ -32,7 +18,7 @@
         let tasksData = localStorage.getItem("tasks")
         tasksData = JSON.parse(tasksData)
 
-        return tasksData ? tasksData : [
+        return tasksData && tasksData.length ? tasksData : [
             {
                 name: "task 1",
                 createAt: Date.now(),
