@@ -135,7 +135,6 @@
 
     function clickedUl(e){
         const dataAction = e.target.getAttribute("data-action")
-        console.log(e.target)
 
         if(!dataAction) return
 
@@ -143,17 +142,16 @@
         while(currentLi.nodeName !== "LI"){
             currentLi = currentLi.parentElement
         }
-        console.log(currentLi)
-        console.log(lis)
+
 
         const currentLiIndex = [...lis].indexOf(currentLi)
-        console.log(currentLiIndex)
+        
 
 
         const actions = {
             editButton: function () {
-                const editContainer = currentLi.querySelector(".editContainer")
-                console.log("editButton no obj");
+                const editContainer = currentLi.querySelector(".editContainer");
+                
                 
                 [...ul.querySelectorAll(".editContainer")].forEach( container => {
                     container.removeAttribute("style")
@@ -163,8 +161,7 @@
             },
 
             deleteButton: function(){
-                arrTasks.splice(currentLiIndex, 1)
-                console.log(arrTasks)
+                arrTasks.splice (currentLiIndex, 1)
                 renderTasks()
                 setNewData()
             },
@@ -188,7 +185,7 @@
                 }else{
                     currentLi.querySelector(".fa-check").classList.add("displayNone")
                 }
-                console.log('ola daniel')
+
                 setNewData()
 
             } 
@@ -206,7 +203,7 @@
         let d = itemInput.value
         if(d === ""){
 
-            alert(itemInput.value)
+            alert("Escreva uma tarefa")
             
         }else{
 
@@ -224,58 +221,3 @@
     renderTasks()
 
 })()
-
-//primeiro modelo
-// ;(function(){
-
-
-
-//     //Armazena
-
-
-//     const itemInput = document.getElementById("item-input")
-//     const todoAddForm = document.getElementById("todo-add")
-//     const ul =  document.getElementById("todo-list")
-//     const lis = ul.querySelectorAll("li")
-
-
-
-//     function addventLi(li){
-//         li.addEventListener("click", function(){
-//         console.log(li)
-//     })
-
-//     }
-
-//     function addTask(task){
-//         const li = document.createElement('li')
-//         li.className ="todo-item"
-//         const p = document.createElement('p')
-//         p.className = 'task-name'
-//         p.textContent = task
-//         li.appendChild(p)
-//         ul.appendChild(li)
-
-//         addventLi(li)
-
-   
-//     }
-
-
-//     todoAddForm.addEventListener("submit", function(e){
-//         e.preventDefault()
-        
-//         addTask(itemInput.value)
-//         itemInput.value = ''
-//         itemInput.focus()
-//     });
-
-//     [...lis].forEach(li => {
-         
-//             addventLi(li)
-
-        
-//     });
-
-
-// })()
